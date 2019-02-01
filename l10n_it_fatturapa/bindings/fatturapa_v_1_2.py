@@ -1197,7 +1197,7 @@ class String20Type (pyxb.binding.datatypes.normalizedString):
         2)
     _Documentation = None
 String20Type._CF_pattern = pyxb.binding.facets.CF_pattern()
-String20Type._CF_pattern.addPattern(pattern='(\\p{IsBasicLatin}{1,20})')
+String20Type._CF_pattern.addPattern(pattern='(\\p{IsBasicLatin}{0,20})')
 String20Type._InitializeFacetMap(String20Type._CF_pattern)
 Namespace.addCategoryObject('typeBinding', 'String20Type', String20Type)
 _module_typeBindings.String20Type = String20Type
