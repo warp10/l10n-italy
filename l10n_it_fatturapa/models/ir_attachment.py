@@ -55,7 +55,11 @@ class Attachment(models.Model):
 
     @staticmethod
     def extract_cades(data):
-        info = cms.ContentInfo.load(data)
+        try:
+            info = cms.ContentInfo.load(data)
+        except Exception as ex:
+            logging.info("Error on loading data for decript Exceptio: %r" % ex)
+            info = cms.ContentInfo.load(base64.b64decode(data))
         return info['content']['encap_content_info']['content'].native
 
     def cleanup_xml(self, xml_string):
